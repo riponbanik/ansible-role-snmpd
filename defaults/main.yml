@@ -1,0 +1,28 @@
+---
+description: 'Created by Ansible'
+location: 'Default Location'
+contact: 'Modify Me <me@example.org>'
+community: public
+
+snmpd_clients:
+  - 127.0.0.1
+  - 10.1.1.1
+
+snmpd_v2_source:
+  - 127.0.0.1
+  - 10.0.0.0/8
+
+snmpd_ipv6: false
+snmpd_loopback_only: true
+snmpd_agentx: false
+
+## install also snmpget, snmpwalk...
+snmpd_with_client: false
+
+## SNMPv3 Auth
+snmp_user: snmp
+snmp_auth_protocol: SHA
+snmp_auth_key: demo_key
+snmp_priv_protocol: AES
+snmp_priv_key: demo_key
+

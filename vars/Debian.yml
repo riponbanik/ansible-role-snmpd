@@ -1,0 +1,8 @@
+---
+# vars file for Debian
+
+snmp_service_name: snmpd
+snmp_package_name: snmpd
+snmp_utility_package_name: snmp
+snmp_config_name: snmpd
+

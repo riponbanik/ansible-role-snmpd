@@ -1,0 +1,9 @@
+---
+# vars file for RedHat
+
+snmp_service_name: snmpd
+snmp_package_name: net-snmp
+snmp_utility_package_name: net-snmp-utils
+snmp_config_name: snmpd
+
+

@@ -1,0 +1,26 @@
+---
+- name: Add OS specific variables
+  include_vars: "{{ item }}"
+  with_first_found:
+    - "vars/{{ ansible_distribution }}-{{ ansible_distribution_version }}.yml"
+    - "vars/{{ ansible_distribution }}.yml"
+    - "vars/{{ ansible_os_family }}.yml"
+    - "vars/defaults.yml"
+  tags:
+    - configuration
+    - packages
+
+- name: Install snmpd
+  package: name={{ snmp_package_name }} state=present
+  tags:
+    - packages
+
+- name: Install snmp utility
+  package: name={{ snmp_utility_package_name }} state=present
+  tags:
+    - packages
+  when: snmpd_with_client == 'true'
+
+- name: Configure snmpd
+  include_tasks: RedHat.yml
+  when: ansible_distribution == 'RedHat'
