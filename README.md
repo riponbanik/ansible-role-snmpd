@@ -44,12 +44,12 @@ process_list:
 
 ```
 
-# Testing SNMP with 1, v2c
+## Testing SNMP with 1, v2c
 
 snmpwalk -v 1 host_name_or_ip -c public
 snmpwalk -v 2c host_name_or_ip -c public
 
-# Testing SNMP with v3
+## Testing SNMP with v3
 snmpwalk -u snmp -A demo_key -a SHA -x AES -X demo_key -l authPriv host_name_or_ip -v3
 
 
