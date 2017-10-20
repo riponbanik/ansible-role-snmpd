@@ -132,5 +132,16 @@ dontLogTCPWrappersConnects yes
 #  Make sure at least one sendmail, but less than or equal to 10 are running.
 #proc sendmail 10 1
 
+{% for item in process_list %}
+{% if item.max is defined and item.min is defined %}
+proc {{ item.name }} {{ item.max }} {{ item.min }}
+{% elif item.max is defined %}
+proc {{ item.name }} {{ item.max }}
+{% elif item.min is defined %}
+proc {{ item.name }} 0 {{ item.min }}
+{% else %}
+proc {{ item.name }}
+{% endif %}
+{% endfor %}
 
 
