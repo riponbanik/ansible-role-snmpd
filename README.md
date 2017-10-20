@@ -19,7 +19,7 @@ Targeted for EL and Ubuntu
 
 ## Example Playbook
 
-Just include this role in your list.
+Clone the repository in the roles directory in ansible as install_snmpd and include this role in your list.
 For example
 
 ```
